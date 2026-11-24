@@ -2,12 +2,14 @@ package com.poo;
 import java.util.List;
 import java.util.ArrayList;
 import com.poo.modelo.Destino;
+import com.poo.modelo.Gerente;
+import com.poo.controlador.ControladorGerente;
+import com.poo.modelo.Asistente;
 import com.poo.modelo.Avion;
 import java.time.LocalDateTime;
 import com.poo.modelo.Vuelo;
 import com.poo.modelo.Venta;
-import com.poo.controlador.Gerente;
-import com.poo.controlador.Asistente;
+import com.poo.controlador.ControladorAsistente;
 
 public class Main{
     public static void main(String[] args) {
@@ -49,13 +51,14 @@ public class Main{
     List<Venta> ventas = new ArrayList<>();
     System.out.println("Ventas registradas: " + ventas.size());
 
-    Gerente gerente = new Gerente(vuelos, ventas);
-    Asistente asistente = new Asistente(vuelos, ventas);
+    Gerente gerente = new Gerente("Nombre del gerente");
+    Asistente asistente = new Asistente("Nombre del asistente");
 
-    System.out.println("Vuelos del gerente: " + gerente.verVuelosYDisponibilidad().size());
+    ControladorGerente controladorGerente = new ControladorGerente(vuelos, ventas);
+    ControladorAsistente controladorAsistente = new ControladorAsistente(vuelos, ventas);
+
+    System.out.println("Vuelos del gerente: " + controladorGerente.verVuelosYDisponibilidad().size());
     System.out.println("Asistente creado: " + (asistente != null));
-
-
-
+    System.out.println("Controlador asistente creado: " + (controladorAsistente != null));
 }
 }
