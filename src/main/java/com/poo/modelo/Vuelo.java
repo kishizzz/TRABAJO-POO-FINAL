@@ -53,5 +53,18 @@ public class Vuelo {
     public boolean getEsExtraordinario(){
         return this.esExtraordinario; 
     }
-    
+
+    public boolean hayDisponibilidad(int cantidad){
+        //esto necesita una lista de reservas que aun no existe, esta en "proceso" pero se agrega para que coincida con el UML
+        return false;
+    }
+
+    public boolean agregarPeso(double kg){
+        return false;
+    }
+                                                    //los metodos aun estan en proceso pero se añaden para coincidir con el UML
+    public double calcularCapacidadRestante(){
+        return 0;
+    }
+
 }
